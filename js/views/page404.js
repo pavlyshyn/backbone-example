@@ -1,22 +1,25 @@
 define(
 [
-    'backbone',
-    'modules/logger'
+    'modules/logger',
+    'views/main',
+    'text!/js/templates/404.html'
 ],
-function(Backbone, logger) {
+function(logger, mainView, template) {
     'use strict';
     
-    return function(params){
+    return function(params) {
         
-        var View = Backbone.View.extend({
+        var View = mainView.extend({
             initialize: function () {
                 logger.append('404 View initialize');
                 logger.append(params);
+                View.__super__.initialize.call(this);
                 
+                this.context.content = _.template(template, {})
             }
         });
         
-        
-        new View();
+        var view = new View();
+        view.render();
     };
 });

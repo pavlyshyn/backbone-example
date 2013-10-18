@@ -1,21 +1,24 @@
 define(
 [
-    'backbone',
-    'modules/logger'
+    'modules/logger',
+    'views/main',
+    'text!/js/templates/home.html'
 ],
-function(Backbone, logger) {
+function(logger, mainView, template) {
     'use strict';
     
-    return function(params){
+    return function() {
         
-        var View = Backbone.View.extend({
+        var View = mainView.extend({
             initialize: function () {
                 logger.append('home View initialize');
+                View.__super__.initialize.call(this);
                 
+                this.context.content = _.template(template, {})
             }
         });
         
-        
-        new View();
+        var view = new View();
+        view.render();
     };
 });

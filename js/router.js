@@ -21,9 +21,9 @@ function(Backbone, logger) {
             this.loadView('page404', params);
         },
         
-        loadView: function(module, params) {
-            require(['views/'+module], function(module) {
-                module(params);
+        loadView: function(view, params) {
+            require(['views/'+view], function(view) {
+                view(params);
             });
         }
     });
@@ -31,7 +31,7 @@ function(Backbone, logger) {
     var initialize = function(){
         logger.append('router initialize');
         
-        new AppRouter;
+        App.router = new AppRouter();
         Backbone.history.start({
             pushState: true
         });

@@ -3,7 +3,8 @@ require.config({
     paths:{
         "jquery"    : "/js/libraries/jquery",
         "underscore": "/js/libraries/underscore",
-        "backbone"  : "/js/libraries/backbone"
+        "backbone"  : "/js/libraries/backbone",
+        "text"      : "/js/libraries/require/text"
     },
 
     shim: {
