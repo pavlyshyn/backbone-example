@@ -17,7 +17,7 @@ function(Backbone, logger) {
         },
         
         page404:function (params) {
-            logger.append('route: page404');
+            logger.append('Page "'+params+'" Not found', 'error');
             this.loadView('page404', params);
         },
         
