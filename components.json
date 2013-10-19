@@ -1,0 +1,11 @@
+{
+    "name"      : "backbone-example",
+    "version"   : "0.0.0",
+    "dependencies": {
+        "backbone"  : "1.0.0",
+        "underscore": "1.4.4",
+        "jquery"    : "1.9.1",
+        "RequireJS" : "2.1.5",
+        "RequireJS text": "1.0.2"
+    }
+}
