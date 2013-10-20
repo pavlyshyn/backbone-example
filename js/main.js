@@ -4,6 +4,7 @@ require.config({
         "jquery"    : "/js/libraries/jquery",
         "underscore": "/js/libraries/underscore",
         "backbone"  : "/js/libraries/backbone",
+        "LocalStorage" : "/js/modules/backbone.localStorage",
         "text"      : "/js/libraries/require/text"
     },
 

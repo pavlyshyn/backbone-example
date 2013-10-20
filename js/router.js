@@ -8,12 +8,18 @@ function(Backbone, logger) {
     var AppRouter = Backbone.Router.extend({
         routes:{
             '': 'home',
+            'todo': 'todo',
             '*actions':'page404'
         },
         
         home: function (params) {
             logger.append('route: home');
             this.loadView('home', params);
+        },
+        
+        todo: function (params) {
+            logger.append('route: todo');
+            this.loadModule('notes', params);
         },
         
         page404:function (params) {
@@ -24,6 +30,12 @@ function(Backbone, logger) {
         loadView: function(view, params) {
             require(['views/'+view], function(view) {
                 view(params);
+            });
+        },
+                
+        loadModule: function(module, params) {
+            require(['modules/'+module+'/index'], function(module) {
+                module(params);
             });
         }
     });

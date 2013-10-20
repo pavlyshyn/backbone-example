@@ -8,14 +8,16 @@ function(Backbone, logger, mainTemplate) {
     'use strict';
     
     var MainView = Backbone.View.extend({
-        el: $("body"),
+        el: jQuery("body"),
         template: '',
         events:{
-            'click #home-page':  "goToHome",
-            'click #error-page': "goToError"
+            'click #home-link':  "openHome",
+            'click #todo-link': "openTodo"
         },
         initialize: function () {
             logger.append('Main View initialize');
+            
+            logger.append(2, 'info');
             
             this.context = {
                 content: ''
@@ -24,17 +26,20 @@ function(Backbone, logger, mainTemplate) {
         
         render: function () {
             logger.append('Main View render');
+            logger.append(3, 'info');
             $(this.el).html(_.template(mainTemplate, this.context));
+            
+            this.trigger('render');
         },
         
-        goToHome: function() {
+        openHome: function() {
             App.router.navigate("", {trigger: true});
         },
         
-        goToError: function() {
-            App.router.navigate("error", {trigger: true});
+        openTodo: function() {
+            App.router.navigate("todo", {trigger: true});
         }
     });
     
     return MainView;
-})
+});
