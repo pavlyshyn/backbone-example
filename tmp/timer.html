@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #green, #grey {
+                display: none;
+                width: 100px;
+                height: 100px;
+            }
+            #green {
+                background-color: green;
+            }
+            #grey {
+                background-color: grey;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="green"></div>
+        <div id="grey"></div>
+
+        <script type="text/javascript">
+
+            var time = 5000; // 5 seconds
+
+            if (getCookie('greenDivTime') == 'hide') {
+                dispayBlock('grey');
+            }
+            else {
+                dispayBlock('green');
+
+                setTimeout(function () {
+                    hideBlock('green');
+                    dispayBlock('grey');
+
+                    setCookie('greenDivTime', 'hide');
+                }, time);
+            }
+
+            function dispayBlock(ID) {
+                document.getElementById(ID).style.display = "block";
+            }
+            function hideBlock(ID) {
+                document.getElementById(ID).style.display = "none";
+            }
+            function getCookie(key) {
+               return localStorage.getItem(key);
+            }
+
+            function setCookie(key, value) {
+                localStorage.setItem(key, value);
+            }
+        </script>
+    </body>
+</html>
