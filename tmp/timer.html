@@ -25,7 +25,7 @@
 
             var time = 5000; // 5 seconds
 
-            if (getCookie('greenDivTime') == 'hide') {
+            if (get('greenDivTime') == 'hide') {
                 dispayBlock('grey');
             }
             else {
@@ -35,7 +35,7 @@
                     hideBlock('green');
                     dispayBlock('grey');
 
-                    setCookie('greenDivTime', 'hide');
+                    set('greenDivTime', 'hide');
                 }, time);
             }
 
@@ -45,11 +45,11 @@
             function hideBlock(ID) {
                 document.getElementById(ID).style.display = "none";
             }
-            function getCookie(key) {
+            function get(key) {
                return localStorage.getItem(key);
             }
 
-            function setCookie(key, value) {
+            function set(key, value) {
                 localStorage.setItem(key, value);
             }
         </script>
