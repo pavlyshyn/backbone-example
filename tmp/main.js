@@ -311,9 +311,9 @@ function setCredits() {
             tmp = (((slideCropPosition.documentWidth - slideCropPosition.width) / 2) + (slideCropPosition.width));
         }
         
-        var ml = -165;
+        var ml = -175;
         if(sWidth >= 1500) {
-            ml = -195;
+            ml = -235;
         }
         
         
