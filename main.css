@@ -1,0 +1,620 @@
+/*
+    Theme Name: Be Bop
+*/
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    border: 0;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+
+    overflow-y: hidden;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+@font-face {
+    font-family: 'Conv_Acta-Light';
+    src: url('fonts/Acta-Light.eot');
+    src: local('☺'), url('fonts/Acta-Light.woff') format('woff'), url('fonts/Acta-Light.ttf') format('truetype'), url('fonts/Acta-Light.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+a:hover {
+    cursor: url('./img/pointer.svg'), auto;
+}
+
+
+
+.logo {
+    display: block;
+    background: url(./img/renata_pereira.svg) no-repeat top left;
+    margin: 0 auto;
+    width: 184px;
+    background-size: 203px 49px;
+    height: 43px;
+    background-position-x: 6px;
+}
+
+h2{
+    font-size: 22px !important;
+}
+.clearfix {
+    clear: both;
+}
+
+body {
+    padding: 20px 0px;
+    height: 100%;
+    font-family:'Conv_Acta-Light',Sans-Serif;
+    cursor:  url('./img/Default.svg'), auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#page, .site-content, #primary {
+    height: 100%;
+}
+
+.site-title, .site-description{
+    z-index: 9;
+    position: relative;
+
+}
+
+.site-title {
+    font-size: 24px;
+    text-align: center;
+    text-decoration: none;
+}
+.site-description {
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.site-title a, .site-description a {
+    text-decoration: none;
+    color: #393b39;
+}
+
+.site-description a {
+    font-weight: normal;
+}
+
+.site-main {
+    margin: 0px auto;
+    height: 100%;
+}
+.fp-section.fp-table, .fp-slide.fp-table {
+    display: inline !important;
+}
+
+
+
+.site-footer {
+    position: absolute;
+    z-index: 99;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 0px 0 22px;
+    height: 60px;
+}
+
+.site-footer a, .site-footer .center {
+    font-size: 24px;
+    color: #000;
+    text-decoration: none;
+}
+
+.site-footer .left {
+    float: left;
+}
+
+
+.site-footer .right {
+    float: right;
+}
+
+
+
+.site-footer .center {
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    margin: 0 auto;
+    width: 78%;
+    text-align: center;
+    font-size: 20px;
+    color: #000;
+    line-height: 30px;
+    font-family: 'Acta light'!important;
+}
+
+.site-info {
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 9;
+    position: absolute;
+    right: 10px;
+    left: 10px;
+}
+
+.site-profile {
+    position: relative;
+    padding: 90px 65px 10px;
+    margin: 0 auto;
+    height: 100%;
+    font-size: 32px;
+    overflow-y: auto;
+    color: #393939;
+    z-index: 99;
+}
+
+.site-profile .left {
+    position: relative;
+    float: left;
+    width: 70%;
+    margin-top:8%;
+    line-height:38px;
+    padding-right: 5px
+}
+.site-profile .right {
+    position: relative;
+    margin-top: 4%;
+    float: left;
+    width: 30%;
+    padding-left: 15px
+}
+.site-profile .right .copyright {
+    margin-top: 60px;
+}
+.site-profile .right .copyright p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.site-profile .right h4 {
+    margin-top: 12px;
+    color: #fff;
+    font-size: 22px;
+    margin-bottom:10px;
+}
+.site-profile .right a, .site-profile .right p {
+    text-decoration: none;
+    color: #393939;
+    font-size: 16px;
+    line-height:20px;
+}
+.site-profile .right a:hover {
+    text-decoration: underline;
+}
+
+.site-profile .back-link {
+    position: relative;
+    float: right;
+    z-index: 9;
+    right: 20px;
+    top: -40px;
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+}
+.site-profile .back-link img {
+    height: 14px;
+    width: 35px;
+}
+
+.site-profile .projects-link {
+    position: absolute;
+    bottom: 20px;
+    left: 0px;
+    color: #393b39;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.fp-slides {
+    position: absolute !important;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+}
+.fp-tableCell {
+    display: block !important;
+    padding-top: 8%;
+}
+
+
+
+
+.site-main .slide .slide-crop {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 80px auto 20%;
+}
+
+
+
+.slick-prev, .slick-next {
+    position: absolute;
+    display: block;
+    top: 0px;
+    height: 75%;
+    width: 50%;
+    border-width: 0px;
+    margin-top: 7%;
+
+
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+
+}
+.slick-prev {
+    left: 0px;
+    z-index: 9;
+    cursor: url('img/arrow-left.svg'), auto;
+}
+
+.slick-next {
+    right: 0px;
+    cursor: url('img/arrow-right.svg'), auto;
+}
+
+
+.site-main .slide .slide-crop {
+    overflow: hidden;
+}
+
+.slick-slide img {
+    width: 100%;
+    height: auto;
+
+}
+.site-main .slide .slide-crop {
+    overflow: hidden;
+}
+
+.site-main .slide .slide-crop {
+    max-width: 90%;
+}
+
+.profile-content {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.site-main .slide .slide-crop {
+    position: relative;
+}
+
+.slide .credits {
+    position: absolute;
+    top: 50%;
+    margin-left: -165px;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+    -o-transform: rotate(90deg);
+    display: inline-block;
+    text-indent: 0px;
+    font-size: 12px;
+    font-family: 'Work Sans';
+    line-height: 30px;
+    z-index: 99;
+    width: 300px !important;
+    min-height: 30px !important;
+}
+
+
+@media only screen and (max-width: 1400px) {
+    .site-title {
+        padding-top: 0px;
+    }
+}
+
+@media only screen and (max-width: 1025px) {
+    .site-profile {
+        padding: 20px;
+        font-size: 24px;
+    }
+    .site-profile .left {
+        width: 70%;
+        margin: 30px 0px;
+        line-height:37px;
+    }
+    .site-profile .right {
+        margin: -20px 0px;
+        padding-left: 0px;
+        width: 30%;
+    }
+
+    .site-profile .back-link {
+        top: 0px;
+    }
+
+    .slick-arrow {
+        display: none !important;
+    }
+}
+@media only screen and (max-width: 780px) {
+    .logo {
+        width: 153px;
+        background-size: 153px 27px;
+        height: 27px;
+        background-position-x: 6px;
+    }
+
+    .site-title {
+        padding: 10px 10px 0px;
+        font-size: 24px;
+    }
+    .site-description {
+        font-size: 14px;
+        margin-bottom: 0px;
+    }
+    .site-footer {
+        padding: 0px 10px 15px;
+    }
+
+    .site-footer .center {
+        width: 50%;
+    }
+
+    .site-profile {
+        padding: 20px;
+        font-size: 24px;
+    }
+    .site-profile .left {
+        width: 100%;
+    }
+    .site-profile .left p{
+        line-height: 30px;
+    }
+    .site-profile .right {
+        padding-left: 0px;
+        width: 100%;
+    }
+    .site-profile .right h4 {
+        margin: 20px 0 8px;
+        color: #fff;
+        font-size: 21px;
+    }
+    .site-profile .right a, .site-profile .right p {
+        font-size: 18px;
+        font-size: 18px;
+        line-height: 20px;
+        color: #393939;
+    }
+
+    .site-profile .center {
+        position: absolute;
+        margin: 0 auto;
+        right: 0px;
+        left: 0px;
+        text-align: center;
+    }
+
+    .site-main .slide .slide-crop img {
+        width: auto;
+        height: 100%;
+    }
+    .site-profile .projects-link {
+        display: none;
+    }
+}
+
+
+@media only screen and (max-height: 750px) {
+
+    .site-title {
+        padding: 0px 10px 0px;
+    }
+    .site-main .slide .slide-crop {
+        max-width: 90%;
+    }
+
+}
+@media only screen and (max-height: 420px) {
+
+    .site-main .slide .slide-crop {
+        margin: 70px auto 20%
+    }
+
+}
+
+@media only screen and (max-height: 390px) {
+    .site-title {
+        padding: 0px 10px 0px;
+        font-size: 18px;
+        margin-top: -20px;
+        margin-bottom: 5px;
+    }
+    .site-description {
+        font-size: 12px;
+        margin-bottom: 0px;
+    }
+
+
+    .site-footer {
+        padding: 10px 20px;
+    }
+    .site-footer a, .site-footer .center {
+        font-size: 18px;
+    }
+
+    .site-footer {
+        height: 45px;
+    }
+
+    .site-main .slide .slide-crop {
+        margin: 46px auto 20%
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .site-profile .left {
+        padding: 0px 30px 0 75px;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+
+    .site-main .slide .slide-crop {
+        max-width: 1200px;
+    }
+    .site-main .slick-slide img {
+        width: auto;
+        height: 100%;
+        margin: 0 auto !important;
+    }
+    .slide .credits {
+        margin-left: -185px;
+    }
+}
+
+
+@media only screen and (min-width: 1700px) {
+    body {
+        padding: 0px 0px;
+    }
+    .site-main .slide .slide-crop {
+        max-width: 90%;
+    }
+    .site-title {
+        font-size: 34px;
+    }
+    .site-profile .left{
+        line-height:45px !important;
+    }    
+    .site-description {
+        font-size: 32px;
+    }
+
+    .site-info {
+        max-width: 1600px;
+    }
+
+    .site-footer a, .site-footer .center {
+        font-size: 32px;
+    }
+    .site-profile .projects-link {
+        font-size: 32px;
+    }
+    .site-profile .back-link {
+        font-size: 32px;
+    }
+    .site-profile .back-link img {
+        height: 20px;
+        width: 40px;
+    }
+
+    .profile-content {
+        max-width: 1600px;
+    }
+    .site-profile {
+        font-size: 40px;
+    }
+
+    .site-profile .right h4 {
+        font-size: 34px;
+    }
+
+    .site-profile .right a, .site-profile .right p {
+        font-size: 34px;
+    }
+
+    .site-profile .right .copyright p {
+        font-size: 24px;
+    }
+}
+
+
+@media only screen and (max-height: 760px) {
+    .site-main .slide .slide-crop {
+        height: 100%;
+    }
+}
+
+
+.site-profile, .projects {
+    display: none;
+}
+
+.animation {
+    position: absolute;
+}
+
+
+.full-page-slider {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+
+.slick-list {
+    height: 100%;
+}
+
+.slider {
+    position: relative;
+    margin: 0px auto;
+    height: 100%;
+}
+.slick-slide {
+    position: relative;
+    height: 100%;
+}
+.slick-track {
+    height: 100%;
+}
+
+.slide {
+    position: relative;
+    text-align: center;
+}
+
+#site-loader {
+    z-index: 999;
+    transition:height 1.6s linear;
+    overflow:hidden;
+    width: 100px;
+    height: 0px;
+    margin: auto;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+}
