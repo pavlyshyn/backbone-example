@@ -45,21 +45,18 @@ jQuery(document).ready(function () {
                 animsitionIn('.site-profile');
 
             });
-        }
-        else if (hash[0] !== undefined && hash[1] !== undefined) {
+        } else if (hash[0] !== undefined && hash[1] !== undefined) {
             jQuery('.projects').css('display', 'block');
 
             animsitionOut('.site-profile');
-        }
-        else {
+        } else {
             jQuery('.projects').css('display', 'block');
             jQuery('.slide-title').text(titles[getDefoultSlideNum()]);
             setSliderHeight();
 
         }
 
-    }
-    else {
+    } else {
         jQuery('.projects').css('display', 'block');
         jQuery('.slide-title').text(titles[getDefoultSlideNum()]);
         setSliderHeight();
@@ -84,8 +81,7 @@ jQuery(document).ready(function () {
                 animsitionIn('.site-profile');
                 jQuery(d).remove();
             });
-        }
-        else if (hash[0] == "projects") {
+        } else if (hash[0] == "projects") {
             jQuery('.projects').css('display', 'block');
             jQuery('.slide-title').text(titles[getDefoultSlideNum()]);
             setSliderHeight();
@@ -200,14 +196,15 @@ function cropImages(block) {
             'width': 'auto',
             'min-width': '100%',
         });
+        console.log('e');
     }
     if (margW >= 0) {
         jQuery(block + ' > .slide-crop > img').css({
-            'margin': '0px auto 20%',
-            'width': 'auto',
-            'height': '100%',
-            'min-height': '100%',
+            'margin': '0px',
+            'width': '100%',
+            'height': jQuery(".slide-crop > img").outerHeight()+"px !important",
         });
+        console.log('ee');
     }
 
     if (margH > 0) {
@@ -220,11 +217,6 @@ function cropImages(block) {
     }
 
 
-    jQuery('.slide-crop > img').css({
-        'margin-top': parseInt(margH / 2, 10) + 'px',
-        //'margin-left': parseInt(margW / 2, 10) + 'px',
-    });
-
 
     if (document.documentElement.clientWidth >= 1700) {
 
@@ -233,15 +225,10 @@ function cropImages(block) {
             'height': 'auto',
             'min-height': '100%',
         });
-    }
-    else if (document.documentElement.clientHeight >= 600 && document.documentElement.clientWidth >= 1200) {
+    } else if (document.documentElement.clientHeight >= 600 && document.documentElement.clientWidth >= 1200) {
         var margH = parseInt(jQuery(".slide-crop").outerHeight() - jQuery(".slide-crop > img").outerHeight(), 10);
         var margW = parseInt(jQuery(".slide-crop").outerWidth() - jQuery(".slide-crop > img").outerWidth(), 10);
 
-        jQuery('.slide-crop > img').css({
-            'margin-top': parseInt(margH / 2, 10) + 'px',
-            'margin-left': parseInt(margW / 2, 10) + 'px',
-        });
 
     }
 
@@ -260,11 +247,9 @@ function setSliderHeight() {
 
         if (sHeight <= 320) {
             sliderHeight = 240;
-        }
-        else if (sHeight <= 360) {
+        } else if (sHeight <= 360) {
             sliderHeight = 260;
-        }
-        else if (sHeight <= 390) {
+        } else if (sHeight <= 390) {
             sliderHeight = 300;
         }
 
@@ -274,14 +259,12 @@ function setSliderHeight() {
             'max-height': sliderHeight + 'px'
         });
 
-    }
-    else {
+    } else {
         var sliderHeight = sHeight - (tHeight + fHeight + 70);
 
         if (sHeight <= 360) {
             sliderHeight = 200;
-        }
-        else if (sHeight <= 390) {
+        } else if (sHeight <= 390) {
             sliderHeight = 300;
         }
 
@@ -296,28 +279,30 @@ function setSliderHeight() {
 function setCredits() {
     var sWidth = document.documentElement.clientWidth;
     jQuery('.slick-slide > .slide-crop > img').each(function (i, img) {
-        var imgPosition = getElementPosition(jQuery(img));
-        var slidePosition = getElementPosition(jQuery(img).parents('.slide-crop').parents('.slide'));
-        var slideCropPosition = getElementPosition(jQuery(img).parents('.slide-crop'));
-        var credits = getElementPosition(jQuery(img).parents('.slide-crop').parents('.slide').find('.credits'));
 
-        var margW = parseInt(slidePosition.width, 10) - parseInt(imgPosition.width, 10);
-        
-        var tmp = 0;
-        if (margW >= 0) {
-            tmp = (((imgPosition.documentWidth - imgPosition.width) / 2) + (imgPosition.width));
+        if (jQuery(img).css('display') == 'inline' ) {
+            var imgPosition = getElementPosition(jQuery(img));
+            var slidePosition = getElementPosition(jQuery(img).parents('.slide-crop').parents('.slide'));
+            var slideCropPosition = getElementPosition(jQuery(img).parents('.slide-crop'));
+            var credits = getElementPosition(jQuery(img).parents('.slide-crop').parents('.slide').find('.credits'));
+
+            var margW = parseInt(slidePosition.width, 10) - parseInt(imgPosition.width, 10);
+
+            var tmp = 0;
+            if (margW >= 0) {
+                tmp = (((imgPosition.documentWidth - imgPosition.width) / 2) + (imgPosition.width));
+            } else {
+                tmp = (((slideCropPosition.documentWidth - slideCropPosition.width) / 2) + (slideCropPosition.width));
+            }
+
+            var ml = -173;
+
+
+            jQuery(img).parents('.slide-crop').parents('.slide').find('.credits').css({
+                'left': parseInt(tmp, 10) + 'px',
+                'margin-left': parseInt(ml, 10) + credits.height + 'px'
+            });
         }
-        else {
-            tmp = (((slideCropPosition.documentWidth - slideCropPosition.width) / 2) + (slideCropPosition.width));
-        }
-        
-        var ml = -173;
-        
-        
-        jQuery(img).parents('.slide-crop').parents('.slide').find('.credits').css({
-            'left': parseInt(tmp, 10) + 'px',
-            'margin-left' : parseInt(ml, 10)+credits.height+'px'
-        });
     });
 }
 function getElementPosition(block) {
@@ -384,8 +369,8 @@ function getLoadingElement() {
 jQuery('.credits').css('display', 'none');
 imagesLoaded(function () {
     jQuery('#site-loader').remove();
-    
-    setTimeout(function() {
+
+    setTimeout(function () {
         setCredits();
         jQuery('.credits').css('display', 'block');
     }, 50);
