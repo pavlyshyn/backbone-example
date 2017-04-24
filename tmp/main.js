@@ -7,8 +7,17 @@ jQuery(document).ready(function () {
 
 
     imagesLoaded(function () {
-
-        jQuery('.slide-crop > img').css('display', 'inline-block');
+        
+        
+        var windowWidth = parseInt(jQuery(window).outerWidth(), 10);
+        
+        if(windowWidth > 700) {
+            jQuery('.slide-crop > img.desktop-image').css('display', 'inline-block');
+        }
+        else {
+            jQuery('.slide-crop > img.mobile-image').css('display', 'inline-block');
+        }
+        
         jQuery(d).remove();
         setCredits();
 
@@ -196,7 +205,6 @@ function cropImages(block) {
             'width': 'auto',
             'min-width': '100%',
         });
-        console.log('e');
     }
     if (margW >= 0) {
         jQuery(block + ' > .slide-crop > img').css({
@@ -204,7 +212,6 @@ function cropImages(block) {
             'width': '100%',
             'height': jQuery(".slide-crop > img").outerHeight()+"px !important",
         });
-        console.log('ee');
     }
 
     if (margH > 0) {
@@ -369,8 +376,17 @@ function getLoadingElement() {
 jQuery('.credits').css('display', 'none');
 imagesLoaded(function () {
     jQuery('#site-loader').remove();
+    
+    var windowWidth = parseInt(jQuery(window).outerWidth(), 10);
 
-    setTimeout(function () {
+    if(windowWidth > 700) {
+        jQuery('.slide-crop > img.desktop-image').css('display', 'inline-block');
+    }
+    else {
+        jQuery('.slide-crop > img.mobile-image').css('display', 'inline-block');
+    }
+
+    setTimeout(function() {
         setCredits();
         jQuery('.credits').css('display', 'block');
     }, 50);
@@ -380,8 +396,18 @@ imagesLoaded(function () {
 
 function imagesLoaded(callback) {
     var urls = [];
+    var windowWidth = parseInt(jQuery(window).outerWidth(), 10);
+    var imgSelector = '.slide-crop > img';
+    
+    if(windowWidth > 700) {
+        imgSelector = '.slide-crop > img.desktop-image';
+    }
+    else {
+        imgSelector = '.slide-crop > img.mobile-image';
+    }
 
-    jQuery('.slide-crop > img').each(function (i, img) {
+
+    jQuery(imgSelector).each(function (i, img) {
         urls.push(jQuery(img).attr('src'));
     });
     var imgs = [];
