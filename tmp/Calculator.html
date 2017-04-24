@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <title></title>
+        <meta content="">
+        <style></style>
+        
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script>
+            function calculate(yd) {
+                var yd = parseFloat($('input[name="yd"]').val());
+                var f100 = parseFloat($('input[name="f100"]').val());
+                var cost = parseFloat($('input[name="cost"]').val());
+                
+                var res1 = (yd / f100 * cost);
+                var res2 = (yd / f100);
+                var res3 = (res1 - (res2 * 0.02) - (yd *0.01));
+                var diff1 = (res1-res3);
+                var res4 = res1 -  0.05*(res2*cost)
+                var diff2 = res1 - res4
+                var res5 = res1 - diff1 - diff2
+                
+                $('input[name="res1"]').val((res1) ? res1 : '');
+                $('input[name="res2"]').val((res2) ? res2 : '');
+                $('input[name="res3"]').val((res3) ? res3 : '');
+                $('input[name="diff1"]').val((diff1) ? diff1 : '');
+                $('input[name="res4"]').val((res4) ? res4 : '');
+                $('input[name="diff2"]').val((diff2) ? diff2 : '');
+                $('#res5').html((res5) ? res5 : '');
+                
+            }
+            $(document).ready(function() {
+                $('input[name="yd"]').on('keypress', function() {
+                    calculate();
+                });
+                
+                $('input[name="f100"]').on('keypress', function() {
+                    calculate();
+                });
+                
+                $('input[name="cost"]').on('keypress', function() {
+                    calculate();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td><h1>User Enter</h1></td>
+                <td><h1>Result 1</h1></td>
+                <td><h1>Result 2</h1></td>
+                <td><h1>Result 3</h1></td>
+            </tr>
+            <tr>
+                <td>
+                    <h2>YD:</h2>
+                    <input type="text" name="yd">
+
+                    <h2>F100:</h2>
+                    <input type="text" name="f100">
+
+                    <h2>Cost</h2>
+                    <input type="text" name="cost">
+                </td>
+                <td>
+
+                    <h2>Result 1</h2>
+                    <input type="text" name="res1">
+
+                    <h2>Result 2</h2>
+                    <input type="text" name="res2">
+                </td>
+                <td>
+
+                    <h2>Result 3</h2>
+                    <input type="text" name="res3">
+
+                    <h2>Diff 1</h2>
+                    <input type="text" name="diff1">
+                </td>
+                <td>
+
+                    <h2>Result 4</h2>
+                    <input type="text" name="res4">
+
+                    <h2>Diff 2</h2>
+                    <input type="text" name="diff2">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: center;">
+                    <span  id="res5"></span>
+                </td>
+            </tr>
+        </table>
+
+    </body>
+</html>
