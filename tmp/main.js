@@ -287,7 +287,7 @@ function setCredits() {
     var sWidth = document.documentElement.clientWidth;
     jQuery('.slick-slide > .slide-crop > img').each(function (i, img) {
 
-        if (jQuery(img).css('display') == 'inline' ) {
+        if (jQuery(img).css('display') == 'inline-block' ) {
             var imgPosition = getElementPosition(jQuery(img));
             var slidePosition = getElementPosition(jQuery(img).parents('.slide-crop').parents('.slide'));
             var slideCropPosition = getElementPosition(jQuery(img).parents('.slide-crop'));
